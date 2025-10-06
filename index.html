@@ -62,10 +62,10 @@
     </section>
 
     <!-- About Me -->
-    <section class="text-center py-8 ">
+    <section class="text-center py-8  max-w-[1280px] mx-auto">
       <p class="text-[#373737] font-dm-sans font-regular text-[24px] mb-4">About me</p>
-      <hr>
-      <p class="text-[#373737] font-dm-sans font-medium text-[24px] md:text-[56px] ml-4 me-4 mt-4 
+      <hr class="ml-4 me-4 md:ml-8 md:me-8">
+      <p class="text-[#373737] font-dm-sans font-medium text-[24px] md:text-[32px] lg:text-[56px] mt-4 ml-4 me-4 md:ml-8 md:me-10 lg:ml-16 lg:me-16 
       ">
         I'm Shimul, a UI/UX Designer focused on crafting clean, intuitive, and user-friendly digital products. I combine creativity with usability to deliver designs that make everyday interactions feel simple and seamless. Constantly learning, adapting, and pushing for better experiences.
       </p>
@@ -78,7 +78,7 @@
       <div class="flex flex-col mt-4 md:mt-8 gap-[40px]">
         <!-- Gorée Life Project -->
         <div
-          class="bg-white border bg-opacity-48 rounded-[16px] md:rounded-[32px] p-0.5 md:p-[32px] overflow-hidden flex flex-col-reverse md:flex-row gap-1 md:gap-[80px]"
+          class="bg-white border bg-opacity-48 rounded-[16px] md:rounded-[32px] p-0.5 md:p-[32px] overflow-hidden flex flex-col-reverse lg:flex-row gap-1 md:gap-[80px]"
         >
           <div class="flex-1 w-full  items-start p-4 sm:p-5 md:p-6 flex flex-col justify-between">
             <img
@@ -103,7 +103,7 @@
             <img
               src="/Image/1 cover.png"
               alt="Gorée Life App Interface"
-              class="w-full h-[420] object-cover"
+              class="w-full  object-cover"
             />
           </div>
         </div>
@@ -141,7 +141,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="bg-[#ffffff] rounded-[32px] ml-4 me-4 py-8 sm:py-12 mt-6 md:mt-[100px] md:py-16 px-4 sm:px-6 lg:px-8 text-center">
+    <section class="bg-[#ffffff] md:max-w-[1280px] mx-auto rounded-[32px] ml-4 me-4 py-8 sm:py-12 mt-6 md:mt-[100px] md:py-16 px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-600 mb-3 sm:mb-4 leading-tight px-2">
         Do you already have a concept or vision?
       </h2>
@@ -169,6 +169,17 @@
             type="email"
             id="email"
             placeholder="e.g: abds@gmail.com"
+            class="w-full border border-gray-300 rounded-[6px] px-3 sm:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400 text-sm sm:text-base"
+          />
+        </div>
+        <div>
+          <label class="text-base text-[18px] font-medium text-[#373737] mb-2 block" for="budget"
+            >Your Budget</label
+          >
+          <input
+            type="number"
+            id="budget"
+            placeholder="e.g: $1000"
             class="w-full border border-gray-300 rounded-[6px] px-3 sm:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400 text-sm sm:text-base"
           />
         </div>
