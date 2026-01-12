@@ -7,6 +7,7 @@
   <title>Shimul - UI/UX Designer Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     /* Base font */
     body {
@@ -35,7 +36,7 @@
         class="object-cover w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20" loading="eager" />
     </div>
     <!-- Header / Hero -->
-    <section
+    <section data-aos="fade-up"
       class="max-w-[1280px] mx-auto flex flex-col gap-8 sm:gap-12 lg:gap-20 lg:flex-row items-end justify-between py-6 sm:py-10 md:py-16 lg:py-24 mt-4 sm:mt-6 lg:mt-8 mb-12 sm:mb-16">
       <div class="w-full lg:w-1/2">
         <p class="text-[#373737] font-bold text-base sm:text-lg md:text-xl lg:text-2xl mb-2 sm:mb-4">Hey, I'm a</p>
@@ -81,7 +82,7 @@
     </section>
 
     <!-- Services -->
-    <section id="services" class="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-16 rounded-2xl my-12">
+    <section id="services" data-aos="fade-up" class="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-16 rounded-2xl my-12">
       <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
         <div class="flex-1">
           <p class="text-sm sm:text-base opacity-90 mb-2">Impact-Driven</p>
@@ -131,7 +132,7 @@
       <hr class="mb-8 sm:mb-12 lg:mb-16">
       <div class="flex flex-col gap-8 sm:gap-12 lg:gap-16">
         <!-- Gorée Life Project -->
-        <div id="goree-life"
+        <div id="goree-life" data-aos="fade-up"
           class="bg-white border bg-opacity-48 rounded-[16px] md:rounded-[32px] p-0.5 md:p-[32px] overflow-hidden flex flex-col-reverse md:flex-row gap-1 md:gap-[80px]">
           <div class="flex-1 w-full items-start p-4 sm:p-5 md:p-6 flex flex-col justify-between">
             <img src="/Image/1 logo.png" alt="Gorée Life Logo"
@@ -156,7 +157,7 @@
         </div>
 
         <!-- Les Pinks Project -->
-        <div id="les-pinks"
+        <div id="les-pinks" data-aos="fade-up"
           class="bg-white border bg-opacity-48 rounded-[16px] md:rounded-[32px] p-0.5 md:p-[32px] overflow-hidden flex flex-col-reverse md:flex-row gap-1 md:gap-[80px]">
           <div class="flex-1 w-full  items-start p-4 sm:p-5 md:p-6 flex flex-col justify-between">
             <img src="/Image/2 logo.png" alt="Les Pinks Logo"
@@ -183,7 +184,7 @@
     </section>
 
     <!-- Contact Section (redesigned) -->
-    <section id="contact" class="bg-[#0b0b0b] text-white py-16 mt-12 rounded-2xl overflow-hidden">
+    <section id="contact" data-aos="fade-up" class="bg-[#0b0b0b] text-white py-16 mt-12 rounded-2xl overflow-hidden">
       <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-6">Let's create something out of this world
           together.</h2>
@@ -291,6 +292,36 @@
       </div>
     </footer>
   </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-cubic',
+      offset: 100
+    });
+
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  </script>
 </body>
 
 </html>
